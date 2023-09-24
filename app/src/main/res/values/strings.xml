@@ -3,4 +3,5 @@
     <string name="application_header">Calculadora IMD</string>
     <string name="tab_title_calculadora">Calculadora</string>
     <string name="tab_title_notas">Notas</string>
+    <string name="calculadora_notas_title">Calcule sua média</string>
 </resources>
