@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_calculadora"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -50,7 +50,7 @@
             app:backgroundTint="@color/primary" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_calculadora_notas"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -61,6 +61,7 @@
     </LinearLayout>
 
     <FrameLayout
+        android:id="@+id/layout"
         android:layout_width="409dp"
         android:layout_height="589dp"
         app:layout_constraintBottom_toBottomOf="parent"
