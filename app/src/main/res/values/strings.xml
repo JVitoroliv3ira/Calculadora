@@ -13,7 +13,7 @@
     <string name="label_situacao">Situação: </string>
     <string name="label_calcular_nota">Calcular </string>
     <string name="label_desenvolvido">Desenvolvido por: João Vitor de Oliveira Santos </string>
-    <string name="value_calculo">0</string>
+    <string name="value_calculo" />
     <string name="label_valor_0">0</string>
     <string name="label_valor_um">1</string>
     <string name="label_valor_2">2</string>

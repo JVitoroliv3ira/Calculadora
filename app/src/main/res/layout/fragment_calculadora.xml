@@ -25,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/text_view_display"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -50,7 +50,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button_1"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -62,7 +62,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button_2"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -74,7 +74,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/button_3"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -86,7 +86,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/button_4"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -109,7 +109,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/button_5"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -121,7 +121,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/button_6"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -133,7 +133,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/button_7"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -145,7 +145,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/button_8"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -168,7 +168,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/button_9"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -180,7 +180,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button11"
+                android:id="@+id/button_0"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -192,7 +192,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/button_10"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -204,7 +204,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button12"
+                android:id="@+id/button_11"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -226,7 +226,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/button_12"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -238,7 +238,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/button_13"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -250,7 +250,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button15"
+                android:id="@+id/button_14"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
@@ -262,7 +262,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button16"
+                android:id="@+id/button_15"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="5dp"
