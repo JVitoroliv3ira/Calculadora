@@ -123,10 +123,10 @@ public class CalculadoraNotas extends Fragment {
         } else {
             resultado.setText("");
             if (Boolean.TRUE.equals(notaAprovado <= 10)) {
-                resultado.append(String.format("Para ser aprovado, você precisa tirar %.2f no(s) próximo(s) semestre(s)", notaAprovado));
+                resultado.append(String.format("Para ser aprovado, você precisa tirar %.2f na(s) próxima(s) unidade(s)", notaAprovado));
             }
             if (Boolean.TRUE.equals(notaAprovadoPorNota <= 10)) {
-                resultado.append(String.format("\nPara ser aprovado por nota, você precisa tirar %.2f no(s) próximo(s) semestre(s)", notaAprovadoPorNota));
+                resultado.append(String.format("\nPara ser aprovado por nota, você precisa tirar %.2f na(s) próxima(s) unidade(s)", notaAprovadoPorNota));
             }
             resultado.setTextColor(Color.DKGRAY);
         }

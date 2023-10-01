@@ -52,6 +52,7 @@
                 android:inputType="numberDecimal"
                 android:padding="10dp"
                 android:textColor="@color/primary"
+                android:textColorHighlight="@color/primary"
                 android:textColorHint="@color/primary" />
 
             <EditText
@@ -64,6 +65,7 @@
                 android:inputType="numberDecimal"
                 android:padding="10dp"
                 android:textColor="@color/primary"
+                android:textColorHighlight="@color/primary"
                 android:textColorHint="@color/primary" />
 
             <EditText
@@ -76,6 +78,7 @@
                 android:inputType="numberDecimal"
                 android:padding="10dp"
                 android:textColor="@color/primary"
+                android:textColorHighlight="@color/primary"
                 android:textColorHint="@color/primary" />
         </LinearLayout>
 

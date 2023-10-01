@@ -13,4 +13,21 @@
     <string name="label_situacao">Situação: </string>
     <string name="label_calcular_nota">Calcular </string>
     <string name="label_desenvolvido">Desenvolvido por: João Vitor de Oliveira Santos </string>
+    <string name="value_calculo">0</string>
+    <string name="label_valor_0">0</string>
+    <string name="label_valor_um">1</string>
+    <string name="label_valor_2">2</string>
+    <string name="label_valor_3">3</string>
+    <string name="label_valor_4">4</string>
+    <string name="label_valor_5">5</string>
+    <string name="label_valor_6">6</string>
+    <string name="label_valor_7">7</string>
+    <string name="label_valor_8">8</string>
+    <string name="label_valor_9">9</string>
+    <string name="label_valor_10">+</string>
+    <string name="label_valor_11">-</string>
+    <string name="label_valor_12">x</string>
+    <string name="label_valor_13">/</string>
+    <string name="label_valor_14">del</string>
+    <string name="label_valor_15">=</string>
 </resources>

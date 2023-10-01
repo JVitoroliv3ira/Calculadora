@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final Button botaoCalculadora = findViewById(R.id.btn_calculadora);
         final Button botaoCalculadoraNotas = findViewById(R.id.btn_calculadora_notas);
+        this.atualizarFragmentoExibido(null);
 
         botaoCalculadora.setOnClickListener(view -> {
             this.selecionarCalculadora();
