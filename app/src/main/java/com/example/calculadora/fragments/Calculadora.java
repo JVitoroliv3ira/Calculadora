@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -13,6 +14,7 @@ import com.example.calculadora.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class Calculadora extends Fragment {
 
@@ -49,6 +51,7 @@ public class Calculadora extends Fragment {
         final Button botao12 = view.findViewById(R.id.button_12);
         final Button botao13 = view.findViewById(R.id.button_13);
         final Button botao14 = view.findViewById(R.id.button_14);
+        final Button botao15 = view.findViewById(R.id.button_15);
         final TextView display = view.findViewById(R.id.text_view_display);
 
         botao1.setOnClickListener(v -> this.clicar("1", display));
@@ -69,6 +72,9 @@ public class Calculadora extends Fragment {
             this.removerUltimoValorDaPilha();
             this.exibirPilha(display);
         });
+        botao15.setOnClickListener(v -> {
+            this.calcular(display);
+        });
 
         return view;
     }
@@ -83,14 +89,113 @@ public class Calculadora extends Fragment {
     }
 
     private void removerUltimoValorDaPilha() {
-        if (!this.pilha.isEmpty()) {
+        if (Boolean.TRUE.equals(!this.pilha.isEmpty())) {
             int posicao = this.pilha.size() - 1;
             this.pilha.remove(posicao);
         }
     }
 
+    private void calcular(TextView display) {
+        Stack<Float> numeros = new Stack<>();
+        Stack<String> operadores = new Stack<>();
+        List<String> expressao = this.concatenarPilha();
+
+        if (Boolean.TRUE.equals(!expressao.isEmpty())) {
+            for (String token : expressao) {
+                if (Boolean.TRUE.equals(this.isNumero(token))) {
+                    numeros.push(Float.parseFloat(token));
+                } else {
+                    while (!operadores.isEmpty() && this.precedenciaOperacao(token) <= this.precedenciaOperacao(operadores.peek())) {
+                        this.realizarOperacao(numeros, operadores);
+                    }
+                    operadores.push(token);
+                }
+            }
+
+            while (!operadores.isEmpty()) {
+                realizarOperacao(numeros, operadores);
+            }
+
+            this.exibirResultado(numeros.pop(), display);
+        }
+    }
+
+    private List<String> concatenarPilha() {
+        List<String> pilhaConcatenada = new ArrayList<>();
+        StringBuilder valorAtual = new StringBuilder();
+
+        if (Boolean.TRUE.equals(!this.pilha.isEmpty())) {
+            for (int index = 0; index < this.pilha.size(); index ++) {
+                String token = this.pilha.get(index);
+                if (Boolean.TRUE.equals(this.isNumero(token))) {
+                    valorAtual.append(token);
+                }
+                if (Boolean.TRUE.equals(this.isNumero(token) && index == this.pilha.size() - 1)) {
+                    pilhaConcatenada.add(valorAtual.toString());
+                    valorAtual.setLength(0);
+                }
+                if (Boolean.TRUE.equals(!this.isNumero(token) && index != this.pilha.size() - 1)){
+                    pilhaConcatenada.add(valorAtual.toString());
+                    pilhaConcatenada.add(token);
+                    valorAtual.setLength(0);
+                }
+            }
+        }
+
+        return pilhaConcatenada;
+    }
+
+    private Boolean isNumero(String valor) {
+        try {
+            Float.parseFloat(valor);
+            return true;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+    }
+
+    private Integer precedenciaOperacao(String operacao) {
+        if (Boolean.TRUE.equals("+".equals(operacao) || "-".equals(operacao))) {
+            return 1;
+        }
+        return 2;
+    }
+
+    private void realizarOperacao(Stack<Float> numeros, Stack<String> operadores) {
+        float b = numeros.pop();
+        float a = numeros.pop();
+        String operador = operadores.pop();
+        float resultado = 0;
+
+        switch (operador) {
+            case "+":
+                resultado = a + b;
+                break;
+            case "-":
+                resultado = a - b;
+                break;
+            case "*":
+                resultado = a * b;
+                break;
+            case "/":
+                if (b != 0) {
+                    resultado = a / b;
+                } else {
+                    Toast.makeText(null, "Não é possível realizar divisão por zero", Toast.LENGTH_LONG).show();
+                }
+                break;
+        }
+
+        numeros.push(resultado);
+    }
+
     private void exibirPilha(TextView display) {
         String concatenado = String.join("", this.pilha);
         display.setText(concatenado);
+    }
+
+    private void exibirResultado(Float resultado, TextView display) {
+        this.pilha.clear();
+        display.setText(String.format("%.2f", resultado));
     }
 }
