@@ -45,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         if (Boolean.TRUE.equals(SelectedFragment.CALCULADORA.equals(this.selectedFragment))) {
             transaction.replace(R.id.layout, Calculadora.newInstance());
-            botaoCalculadora.setText("CALCULADORA *");
-            botaoCalculadoraNotas.setText("NOTAS");
+            botaoCalculadora.setText(R.string.tab_title_calculadora_active);
+            botaoCalculadoraNotas.setText(R.string.tab_title_notas);
         } else {
             transaction.replace(R.id.layout, CalculadoraNotas.newInstance());
-            botaoCalculadora.setText("CALCULADORA");
-            botaoCalculadoraNotas.setText("NOTAS *");
+            botaoCalculadora.setText(R.string.tab_title_calculadora);
+            botaoCalculadoraNotas.setText(R.string.tab_title_notas_active);
         }
         transaction.commit();
     }

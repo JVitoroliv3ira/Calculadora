@@ -3,6 +3,8 @@
     <string name="application_header">Calculadora IMD</string>
     <string name="tab_title_calculadora">Calculadora</string>
     <string name="tab_title_notas">Notas</string>
+    <string name="tab_title_calculadora_active">Calculadora *</string>
+    <string name="tab_title_notas_active">Notas *</string>
     <string name="calculadora_notas_title">Calcule sua média</string>
     <string name="label_primeira_nota">Primeira Nota</string>
     <string name="label_segunda_nota">Segunda Nota</string>
