@@ -21,15 +21,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final Button botaoCalculadora = findViewById(R.id.btn_calculadora);
         final Button botaoCalculadoraNotas = findViewById(R.id.btn_calculadora_notas);
-        this.atualizarFragmentoExibido(null);
+        this.atualizarFragmentoExibido(null, botaoCalculadora, botaoCalculadoraNotas);
 
         botaoCalculadora.setOnClickListener(view -> {
             this.selecionarCalculadora();
-            this.atualizarFragmentoExibido(view);
+            this.atualizarFragmentoExibido(view, botaoCalculadora, botaoCalculadoraNotas);
         });
         botaoCalculadoraNotas.setOnClickListener(view -> {
             this.selecionarCalculadoraNotas();
-            this.atualizarFragmentoExibido(view);
+            this.atualizarFragmentoExibido(view, botaoCalculadora, botaoCalculadoraNotas);
         });
     }
 
@@ -41,12 +41,16 @@ public class MainActivity extends AppCompatActivity {
         this.selectedFragment = SelectedFragment.CALCULADORA_NOTAS;
     }
 
-    private void atualizarFragmentoExibido(View view) {
+    private void atualizarFragmentoExibido(View view, Button botaoCalculadora, Button botaoCalculadoraNotas) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         if (Boolean.TRUE.equals(SelectedFragment.CALCULADORA.equals(this.selectedFragment))) {
             transaction.replace(R.id.layout, Calculadora.newInstance());
+            botaoCalculadora.setText("CALCULADORA *");
+            botaoCalculadoraNotas.setText("NOTAS");
         } else {
             transaction.replace(R.id.layout, CalculadoraNotas.newInstance());
+            botaoCalculadora.setText("CALCULADORA");
+            botaoCalculadoraNotas.setText("NOTAS *");
         }
         transaction.commit();
     }
