@@ -12,8 +12,12 @@ import androidx.fragment.app.Fragment;
 
 import com.example.calculadora.R;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Stack;
 
 public class Calculadora extends Fragment {
@@ -125,7 +129,7 @@ public class Calculadora extends Fragment {
         StringBuilder valorAtual = new StringBuilder();
 
         if (Boolean.TRUE.equals(!this.pilha.isEmpty())) {
-            for (int index = 0; index < this.pilha.size(); index ++) {
+            for (int index = 0; index < this.pilha.size(); index++) {
                 String token = this.pilha.get(index);
                 if (Boolean.TRUE.equals(this.isNumero(token))) {
                     valorAtual.append(token);
@@ -134,10 +138,14 @@ public class Calculadora extends Fragment {
                     pilhaConcatenada.add(valorAtual.toString());
                     valorAtual.setLength(0);
                 }
-                if (Boolean.TRUE.equals(!this.isNumero(token) && index != this.pilha.size() - 1)){
-                    pilhaConcatenada.add(valorAtual.toString());
-                    pilhaConcatenada.add(token);
-                    valorAtual.setLength(0);
+                if (Boolean.TRUE.equals(!this.isNumero(token))) {
+                    if (Boolean.TRUE.equals(",".equals(token) || ".".equals(token) || ("-".equals(token) && index == 0))) {
+                        valorAtual.append(token);
+                    } else {
+                        pilhaConcatenada.add(valorAtual.toString());
+                        pilhaConcatenada.add(token);
+                        valorAtual.setLength(0);
+                    }
                 }
             }
         }
@@ -181,7 +189,8 @@ public class Calculadora extends Fragment {
                 if (b != 0) {
                     resultado = a / b;
                 } else {
-                    Toast.makeText(null, "Não é possível realizar divisão por zero", Toast.LENGTH_LONG).show();
+                    this.pilha.clear();
+                    Toast.makeText(getContext(), "Não é possível realizar divisão por zero", Toast.LENGTH_LONG).show();
                 }
                 break;
         }
@@ -195,7 +204,10 @@ public class Calculadora extends Fragment {
     }
 
     private void exibirResultado(Float resultado, TextView display) {
+        DecimalFormat df = new DecimalFormat("#.#", new DecimalFormatSymbols(Locale.US));
+        String resultadoFormatado = df.format(resultado);
         this.pilha.clear();
-        display.setText(String.format("%.2f", resultado));
+        this.pilha.addAll(Arrays.asList(resultadoFormatado.split("")));
+        display.setText(resultadoFormatado);
     }
 }
