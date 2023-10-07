@@ -118,7 +118,7 @@ public class CalculadoraNotas extends Fragment {
     private void exibirNotas(Float notaAprovado, Float notaAprovadoPorNota, TextView resultado) {
 
         if (Boolean.TRUE.equals(notaAprovado > 10 && notaAprovadoPorNota > 10)) {
-            resultado.setText("Não existe possibilidade para ser aprovado.");
+            resultado.setText("Situação: Não existe possibilidade para ser aprovado.");
             resultado.setTextColor(Color.RED);
         } else {
             resultado.setText("");
