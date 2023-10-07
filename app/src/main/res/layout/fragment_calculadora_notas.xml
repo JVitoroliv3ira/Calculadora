@@ -47,39 +47,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/custom_input"
                 android:ems="10"
                 android:hint="@string/hint_primeira_nota"
                 android:inputType="numberDecimal"
                 android:padding="10dp"
                 android:textColor="@color/primary"
                 android:textColorHighlight="@color/primary"
-                android:textColorHint="@color/primary" />
+                android:textColorHint="@color/gray_dark" />
 
             <EditText
                 android:id="@+id/et_nota_02"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/custom_input"
                 android:ems="10"
                 android:hint="@string/hint_segunda_nota"
                 android:inputType="numberDecimal"
                 android:padding="10dp"
                 android:textColor="@color/primary"
                 android:textColorHighlight="@color/primary"
-                android:textColorHint="@color/primary" />
+                android:textColorHint="@color/gray_dark" />
 
             <EditText
                 android:id="@+id/et_nota_03"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/custom_input"
                 android:ems="10"
                 android:hint="@string/hint_terceira_nota"
                 android:inputType="numberDecimal"
                 android:padding="10dp"
                 android:textColor="@color/primary"
                 android:textColorHighlight="@color/primary"
-                android:textColorHint="@color/primary" />
+                android:textColorHint="@color/gray_dark" />
         </LinearLayout>
 
         <LinearLayout
